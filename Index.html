@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf1e7cdd72.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Style.css">
+    <script defer src="Script.js"></script>
+    <link rel="icon" href="icon.png">
+    <title>Klyrhon</title>
+</head>
+<body>
+    <div id="mainContainer">    
+        <div id="cursorTrailer">
+            <i id="trailerIcon" 
+            class="fa-solid fa-code">
+            </i>
+        </div>
+        <div id="navigationBar">
+            <div id="logo"
+            class="interactable">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <div id="navigation">
+                <ul>
+                    <li class="interactable" data-type="link">
+                        <a href="#home"><p><span class="green">01. </span> Home</p></a>
+                    </li>
+                    <li class="interactable" data-type="link">
+                        <a href="#about"><p><span class="green">02. </span> About</p></a>
+                    </li>
+                    <li class="interactable" data-type="link">
+                        <a href="#works"><p><span class="green">03. </span> Works</p></a>
+                    </li>
+                    <li class="interactable" data-type="link">
+                        <a href="#contacts"><p><span class="green">04. </span> Contacts</p></a>
+                    </li>
+                    <li>
+                        <button id="resumeButton">Resume</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="loadingScreen">
+            <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+        </div>
+
+        <div id="home">
+            <div id="name">
+                <p>Hi, my name is</p>
+                <h1 class="interactable" 
+                data-type="text">Klyrhon Aurel.</h1>
+                <h2>1st Year BSIT Student</h2>
+                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique officia ratione rerum suscipit ut temporibus aliquam itaque eum, esse accusantium. Nobis suscipit tenetur doloribus natus vitae quod porro esse ex amet? Dolore, minima, dignissimos aperiam, magnam velit dolores quis ipsam veritatis est enim delectus! Iure expedita aperiam beatae corporis necessitatibus!</h3>
+            </div>    
+        </div>
+
+        <div id="about">
+            <div id="aboutMe">
+                <h1 class="interactable"
+                data-type="text">
+                    About Me.</h1>
+            </div>
+        </div>
+
+        <div id="works">
+            <div id="myWorks">
+                <h1 class="interactable"
+                data-type="text">
+                    My Works.</h1>
+            </div>
+        </div>
+
+        <div id="contacts">
+            <div id="myContacts">
+                <h1 class="interactable"
+                data-type="text">
+                    Contact Me.</h1>
+            </div>
+        </div>
+    
+        <div id="contactInformation">
+            <ul>
+                <li>
+                    <a href="https://github.com/KlyrhonMiko" target="_blank" class="interactable" data-type="link"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/aurelklyrhon" target="_blank" class="interactable" data-type="link"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/klyrhonaurel/" target="_blank" class="interactable" data-type="link"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/KlyrhonA" target="_blank" class="interactable" data-type="link"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/klyrhon/" target="_blank" class="interactable" data-type="link"><i class="fa-brands fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+            <p>
+                <a href="mailto:aurelklyrhonmiko@gmail.com" 
+                class="interactable"
+                data-type="link">aurelklyrhonmiko@gmail.com</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
