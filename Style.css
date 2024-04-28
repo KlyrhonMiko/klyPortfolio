@@ -111,13 +111,12 @@ body
 
     color: #64ffda;
 
-    transform: translate(5px,18px);
-
     opacity: 0;
 }
 
 #name h1
 { 
+    width: 700px;
     font-size: 100px;
     font-family: "Arial", sans-serif;
     font-weight: 600;
@@ -185,93 +184,100 @@ body
 }
 
 /* * Contact Infomation */
-#contactInformation
+#contactLeft
 {
     position: fixed;
-
-    color: #ccd6f6;
-
-    bottom: 75px;
-    left: 25px;
-    
-    display: block;
-}
-
-#contactInformation ul
-{
-    list-style: none;
-}
-
-#contactInformation li
-{
-    font-size: 25px;
-    padding-top: 18px;
-    
-    opacity: 0;
-}
-
-#contactInformation i:hover
-{
-    color: #64ffda;
-    transform: translateY(-8px);
-}
-
-#contactInformation i
-{
-    font-size: 25px;
-
-    position: relative;
 
     bottom: 0;
     left: 0;
 
-    transition: 0.4s ease;
+    width: 75px;
 }
 
-#contactInformation p
+#contactLeft ul
 {
-    position: fixed;
+    height: 330px;
 
-    transform: rotate(90deg);
+    display: flex;
+    flex-direction: column;
 
-    font-family: "Roboto Mono", monospace;
+    align-items: center;
+    justify-content: space-between;
 
-    bottom: 200px;
-    right: -79px;
+    list-style: none;
+}
 
+#contactLeft li
+{
     opacity: 0;
 }
 
-#contactInformation a
+#contactLeft i
+{
+    transition: 0.4s;
+}
+
+#contactLeft i:hover
+{
+    transform: translateY(-10px);
+}
+
+#contactLeft a
+{
+    font-size: 25px;
+    color: #ccd6f6;
+}
+
+#leftLine
+{
+    content: '';
+    width: 1px;
+    height: 75px;
+
+    flex-grow: 3;
+
+    background-color: #ccd6f6;
+}
+
+#contactRight
+{
+    width: 75px;
+    height: 240px;
+
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    bottom: 0;
+    right: 0;
+}
+
+#contactRight p
+{
+    transform: translateX(2px) rotate(90deg);
+    opacity: 0;
+}
+
+#contactRight a
 {
     color: #ccd6f6;
     text-decoration: none;
+
+    font-family: "Space Mono", monospace;
 }
 
-#contactInformation::after, #contactInformation::before
+#rightLine
 {
-    position: fixed;
-    content: '';
-
-    padding: 35px 1px;
-
-    background-color: #ccd6f6;
-
-    border-radius: 20px;
+    width: 1px;
+    height: 75px;
 
     opacity: 0;
-}
 
-#contactInformation::after
-{
-    bottom: 0;
-    left: 35px;
-}
-
-#contactInformation::before
-{
-    bottom: 0;
-    right: 47px;
+    background-color: #ccd6f6;
 }
 
 /* * Navigation Bar */
@@ -328,7 +334,7 @@ body
 #navigation
 {
     padding-right: 25px;
-    width: 500px;
+    width: 600px;
 }
 
 #navigation ul
@@ -351,7 +357,7 @@ body
 #navigation p
 {
     font-family: "Roboto Mono", monospace;
-    font-size: 12px;
+    font-size: 13px;
     color: #ccd6f6;
 
     transition: 0.4s ease;
@@ -496,7 +502,7 @@ body
 
 #mainContainer.loaded #name p
 {
-    animation: transitionInTop 0.8s ease 1.8s forwards;
+    animation: transitionIn 0.8s ease 1.8s forwards;
 }
 
 #mainContainer.loaded #name h1
@@ -530,42 +536,42 @@ body
 }
 
 
-#mainContainer.loaded #contactInformation li:nth-child(1)
+#mainContainer.loaded #contactLeft li:nth-child(1)
 {
     animation: transitionIn 0.8s ease 2.4s forwards;
 }
 
-#mainContainer.loaded #contactInformation li:nth-child(2)
+#mainContainer.loaded #contactLeft li:nth-child(2)
 {
     animation: transitionIn 0.8s ease 2.6s forwards;
 }
 
-#mainContainer.loaded #contactInformation li:nth-child(3)
+#mainContainer.loaded #contactLeft li:nth-child(3)
 {
     animation: transitionIn 0.8s ease 2.8s forwards;
 }
 
-#mainContainer.loaded #contactInformation li:nth-child(4)
+#mainContainer.loaded #contactLeft li:nth-child(4)
 {
     animation: transitionIn 0.8s ease 3s forwards;
 }
 
-#mainContainer.loaded #contactInformation li:nth-child(5)
+#mainContainer.loaded #contactLeft li:nth-child(5)
 {
     animation: transitionIn 0.8s ease 3.2s forwards;
 }
 
-#mainContainer.loaded #contactInformation::after
+#mainContainer.loaded #contactLeft li:nth-child(6)
 {
     animation: transitionIn 0.8s ease 3.4s forwards;
 }
 
-#mainContainer.loaded #contactInformation p
+#mainContainer.loaded #contactRight p
 {
     animation: eMailTransitionIn 0.8s ease 3.6s forwards;
 }
 
-#mainContainer.loaded #contactInformation::before
+#mainContainer.loaded #rightLine
 {
     animation: transitionIn 0.8s ease 3.7s forwards;
 }
@@ -615,44 +621,30 @@ body
     from
     {
         opacity: 0;
-        transform: translateY(50px) rotate(90deg);
+        transform: translate(2px, 50px) rotate(90deg);
     }
     to
     {
         opacity: 1;
-        transform: translateY(0px) rotate(90deg);
+        transform: translate(2px, 0px) rotate(90deg);
     }
 }
 
-@keyframes transitionInTop {
-    from
-    {
-        opacity: 0;
-        transform: translate(5px, 68px);
-    }
-    to
-    {
-        opacity: 1;
-        transform: translate(5px, 18px);
-    }
-}
-
- /* * Cursor traier */
-
- #mainContainer:hover > #cursorTrailer
- {
+/* * Cursor traier */
+#mainContainer:hover > #cursorTrailer
+{
     opacity: 1;
- }
+}
 
- #cursorTrailer
- {
+#cursorTrailer
+{
     height: 25px;
     width: 25px;
 
     background-color: #64ffda;
     color: #0a192f;
     border-radius: 20px;
-    
+
     position: fixed;
     left: 0;
     top: 0;
@@ -664,7 +656,7 @@ body
     pointer-events: none;
     opacity: 0;
     transition: opacity 500ms ease;
-    
+
     mix-blend-mode: difference;
 }
 
