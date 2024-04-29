@@ -29,8 +29,10 @@ window.addEventListener('scroll', () =>
 // * Loading Screen Logic
 window.addEventListener('load', () => 
 {
+  window.scrollTo(0,0)
   setTimeout(function()
   {
+    window.scrollTo(0,0)
     mainContainer.classList.add("loaded")
   }, 3000)
 }) 
