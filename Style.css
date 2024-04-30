@@ -543,13 +543,14 @@ body
     height: 500px;
 
     stroke: #004d24;
+    opacity: 0.5;
 
     transition: 1.5s ease;
 }
 
 #mainContainer.loaded
 {
-    overflow-y: visible;
+    overflow-x: visible;
 }
 
 #mainContainer.loaded #logo
