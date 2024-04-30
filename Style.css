@@ -22,11 +22,14 @@ html
 
 body
 {   
+    overflow-x: hidden;
     background-color: #003318;
 }
 
 #mainContainer
 {
+
+
     width: 100%;
     min-height: 100dvh;
 
@@ -43,32 +46,6 @@ body
     overflow: hidden;
 
     z-index: 0;
-}
-
-#home
-{
-    display: flex;
-
-    align-items: normal;
-    justify-content: space-around;
-
-    flex-direction: column;
-
-    width: 100%;
-    height: 100dvh;
-}
-
-#about
-{
-    display: flex;
-
-    align-items: center;
-    justify-content: space-around;
-
-    flex-direction: column;
-
-    width: 100%;
-    height: 100dvh;
 }
 
 #works
@@ -97,10 +74,29 @@ body
     height: 100dvh;
 }
 
-/* * Name */
+/* * Home */
+#home
+{
+    display: flex;
+
+    align-items: normal;
+    justify-content: space-around;
+
+    flex-direction: column;
+
+    width: 100%;
+    height: 100dvh;
+}
+
 #name
 {
-    padding: 0 75px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: space-around;
+
+    padding: 0 clamp(20px, 10dvw, 200px);
     z-index: 50;
 }
 
@@ -114,10 +110,11 @@ body
 
 #name h1
 { 
-    width: 700px;
+    padding-bottom: 20px;
+    line-height: 0.8;
     font-size: 100px;
-    font-family: "Arial", sans-serif;
-    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
 
     color: #fff;
 
@@ -139,23 +136,76 @@ body
 
 #name h3
 {
+    padding: 10px 0 20px;
     font-size: 20px;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
     color: #91f086;
     
     text-align: justify;
 
-    width: 60dvw;
+    width: clamp(200px, 65dvw, 600px);
 
     opacity: 0;
 }
 
+#nameResumeButton
+{
+
+    font-size: 14px;
+    font-family: "Roboto Mono", monospace;
+
+    background-color: #003318;
+    border: 1px solid #91f086;
+    border-radius: 5px;
+
+    color: #91f086;
+
+    cursor: pointer;
+
+    width: 150px;
+    height: 50px;
+
+    transition: 0.2s ease;
+}
+
+#nameResumeButton:hover
+{
+    box-shadow: 4px 4px #91f086;
+    transform: translate(-5px,-5px);
+}
+
+#name a
+{
+    opacity: 0;
+}
+
 /* * About Me */
+#about
+{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    flex-direction: column;
+
+    width: 100%;
+    height: 100dvh;
+}
+
+#aboutMe
+{
+    display: flex;
+    
+    align-items: flex-start;
+    justify-content: center;
+}
+
 #aboutMe h1
 {
     color: #fff;
-    font-size: 100px;
+    font-size: 50   px;
     font-family: Arial, sans-serif;
 
     opacity: 0;
@@ -181,20 +231,59 @@ body
     opacity: 0;
 }
 
+#footer
+{
+    position: absolute;
+
+    bottom: 25px;
+
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+    color: #11823b;
+}
+
+#builtBy
+{
+    opacity: 0;
+}
+
 /* * Contact Infomation */
 #contactLeft
 {
+    width: 75px;
+    height: 370px;
+
     position: fixed;
 
-    bottom: 0;
-    left: 0;    
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: space-between;
 
-    width: 75px;
+    bottom: 0;
+    left: 0;
+}
+
+#contactLeft::after
+{
+    content: '';
+    width: 0.5px;
+    height: 75px;
+
+    background-color: #91f086;
+
+    opacity: 0;
 }
 
 #contactLeft ul
 {
-    height: 330px;
+    height: 270px;
 
     display: flex;
     flex-direction: column;
@@ -226,17 +315,6 @@ body
     color: #02ff5e;
 }
 
-#leftLine
-{
-    content: '';
-    width: 1px;
-    height: 75px;
-
-    flex-grow: 3;
-
-    background-color: #02ff5e;
-}
-
 #contactRight
 {
     width: 75px;
@@ -254,6 +332,17 @@ body
     right: 0;
 }
 
+#contactRight::after
+{
+    content: '';
+    width: 0.5px;
+    height: 75px;
+
+    background-color: #91f086;
+
+    opacity: 0;
+}
+
 #contactRight p
 {
     transform: translateX(2px) rotate(90deg);
@@ -268,14 +357,9 @@ body
     font-family: "Space Mono", monospace;
 }
 
-#rightLine
+#eMailBottom
 {
-    width: 1px;
-    height: 75px;
-
-    opacity: 0;
-
-    background-color: #02ff5e;
+    visibility: hidden;
 }
 
 /* * Navigation Bar */
@@ -315,7 +399,7 @@ body
     width: 50px;
     height: 50px;
 
-    padding-left: 25px; 
+    padding: 0 25px; 
     
     display: flex;
 
@@ -339,7 +423,6 @@ body
 #navigation ul
 {
     display: flex;
-
     align-items: center;
     justify-content: space-around;
     
@@ -511,17 +594,17 @@ body
 
 #mainContainer.loaded #aboutMe h1
 {
-    animation: transitionIn 0.8s ease 2s forwards;
+    animation: transitionIn 0.8s ease 1.8s forwards;
 }
 
 #mainContainer.loaded #myWorks h1
 {
-    animation: transitionIn 0.8s ease 2s forwards;
+    animation: transitionIn 0.8s ease 1.8s forwards;
 }
 
 #mainContainer.loaded #myContacts h1
 {
-    animation: transitionIn 0.8s ease 2s forwards;
+    animation: transitionIn 0.8s ease 1.8s forwards;
 }
 
 #mainContainer.loaded #name h2
@@ -532,6 +615,11 @@ body
 #mainContainer.loaded #name h3
 {
     animation: transitionIn 0.8s ease 2.2s forwards;
+}
+
+#mainContainer.loaded #name a
+{
+    animation: transitionIn 0.8s ease 2.3s forwards;
 }
 
 #mainContainer.loaded #contactLeft li:nth-child(1)
@@ -559,7 +647,7 @@ body
     animation: transitionIn 0.8s ease 3.2s forwards;
 }
 
-#mainContainer.loaded #contactLeft li:nth-child(6)
+#mainContainer.loaded #contactLeft::after
 {
     animation: transitionIn 0.8s ease 3.4s forwards;
 }
@@ -569,9 +657,20 @@ body
     animation: eMailTransitionIn 0.8s ease 3.6s forwards;
 }
 
-#mainContainer.loaded #rightLine
+#mainContainer.loaded #contactRight::after
 {
     animation: transitionIn 0.8s ease 3.7s forwards;
+}
+
+#mainContainer.loaded #eMailBottom
+{
+    animation: transitionIn 0.8s ease 3.8s forwards;
+}
+
+
+#mainContainer.loaded #builtBy
+{
+    animation: transitionIn 0.8s ease 4s forwards;
 }
 
 @keyframes drawLogo
@@ -675,28 +774,81 @@ body
 /* *Mobile Responsiveness */
 @media (max-width: 870px) 
 {
+    #mainContainer:hover > #cursorTrailer
+    {
+    opacity: 0;
+    }
     #name h1
     {
         line-height: 0.8;
-        font-size: clamp(40px, 11.5dvw, 100px); 
+        font-size: clamp(70px, 11.5dvw, 100px); 
         padding: 18px 0 10px;
     }
 
     #name h2
     {
-        font-size: clamp(14px, 3.13dvw, 25px);
+        font-size: clamp(20px, 3.13dvw, 25px);
         animation: none;
     }
 
     #name h3
     {
-        font-size: clamp(14px, 2.304dvw, 30px);
+        font-size: clamp(20px, 2.304dvw, 30px);
     }
 
     #name p
     {
-        font-size: clamp(12px, 2.25dvw, 18px);
+        font-size: clamp(18px, 2.25dvw, 18px);
     }
+
+    #contactLeft
+    {
+        width: 300px;
+        height: 35px;
+        
+        position: relative;
+    }
+
+    #contactLeft::after
+    {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #contactLeft ul
+    {
+        flex-direction: row;
+
+        width: 300px;
+        height: 35px;
+
+    }
+
+    #contactRight
+    {
+        visibility: hidden;
+    }
+
+    #contactRight::after
+    {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    #eMailBottom
+    {
+        visibility: visible;
+        opacity: 0;
+    }
+
+    #eMailBottom a
+    {
+        color: #48bf53;
+        text-decoration: none;
+
+        font-family: "Space Mono", monospace;
+    }
+
 }
 
 @media (max-width: 320px) 
