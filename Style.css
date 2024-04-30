@@ -28,9 +28,7 @@ body
 
 #mainContainer
 {
-
-
-    width: 100%;
+    width: 100dvw;
     min-height: 100dvh;
 
     top: 0;
@@ -778,6 +776,7 @@ body
     {
     opacity: 0;
     }
+
     #name h1
     {
         line-height: 0.8;
