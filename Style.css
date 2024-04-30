@@ -493,7 +493,7 @@ body
     left: 0;
 
     height: 100dvh;
-    width: clamp(1000px, 100dvw, 100dvw);
+    width: 100%;
 
     background-color: #02231c;
 
