@@ -203,7 +203,7 @@ body
 #aboutMe h1
 {
     color: #fff;
-    font-size: 50   px;
+    font-size: 50   00;
     font-family: Arial, sans-serif;
 
     opacity: 0;
@@ -493,7 +493,7 @@ body
     left: 0;
 
     height: 100dvh;
-    width: 100%;
+    width: clamp(1000px, 100dvw, 100dvw);
 
     background-color: #02231c;
 
