@@ -31,7 +31,7 @@ body
 #mainContainer
 {
     width: 100dvw;
-    min-height: 100dvh;
+    min-height: 100vh;
 
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@ body
 
     opacity: 0.08;
 
-    height: 100dvh;
+    height: 100vh;
     width: 100dvw;
 
     background-size: 50px 50px;
@@ -78,7 +78,7 @@ body
     flex-direction: column;
 
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
 }
 
 #contacts
@@ -91,7 +91,7 @@ body
     flex-direction: column;
 
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
 }
 
 /* * Home */
@@ -105,7 +105,7 @@ body
     flex-direction: column;
 
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
 }
 
 #name
@@ -216,7 +216,7 @@ body
     flex-direction: column;
 
     width: 100%;
-    height: 100dvh;
+    height: 100vh;
 }
 
 #aboutMe
@@ -555,7 +555,7 @@ body
     top: 0;
     left: 0;
 
-    height: 100dvh;
+    height: 100vh;
     width: 100%;
 
     background-color: #02231c;
