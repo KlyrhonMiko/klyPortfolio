@@ -224,15 +224,11 @@ body
     display: flex;
     width: 50%;
     flex-direction: column;
-
-    animation: fadeIn linear forwards;
-    animation-timeline: view();
-    animation-range: entry cover 45%;
     
     align-items: flex-start;
     justify-content: center;
 
-    opacity: 0;
+    opacity: 1;
 }
 
 #aboutMe h1
@@ -254,19 +250,6 @@ body
     text-align: justify;
 
     opacity: 0;
-}
-
-@keyframes fadeIn
-{
-    from
-    {
-        opacity: 0;
-    }
-    to
-    {
-
-        opacity: 1;
-    }
 }
 
 /* * My Works */
@@ -431,8 +414,10 @@ body
     justify-content: space-between;
 
     top: 0;
+    left: 0;
+
     height: 75px;
-    width: 100%;
+    width: 100vw;
 
     transition: 0.4s ease;
 
@@ -556,12 +541,12 @@ body
     left: 0;
 
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 
     background-color: #02231c;
 
     display: flex;
-    align-items: center;
+    align-items: center;    
     justify-content: center;
 
     opacity: 1;
@@ -583,10 +568,9 @@ body
 
 #loadingScreen svg
 {
-    width: 300px;
-    height: 300px;
+    width: 20%;
 
-    overflow: visible;
+    overflow-x: visible;
 
     stroke: #91f086;
     stroke-width: 5px;
@@ -600,8 +584,7 @@ body
 
 #mainContainer.loaded #loadingScreen svg
 {
-    width: 500px;
-    height: 500px;
+    width: 50%; 
 
     stroke: #004d24;
     opacity: 0.5;
@@ -611,7 +594,7 @@ body
 
 #mainContainer.loaded
 {
-    overflow-x: visible;
+    overflow: visible;
 }
 
 #mainContainer.loaded #logo, 
