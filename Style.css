@@ -594,7 +594,7 @@ body
 
 #mainContainer.loaded
 {
-    overflow: visible;
+    overflow-x: visible;
 }
 
 #mainContainer.loaded #logo, 
