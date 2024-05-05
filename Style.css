@@ -266,13 +266,67 @@ body
 }
 
 /* * My Contacts */
+#myContacts
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: space-around;
+
+    text-align: center;
+    width: 80%;
+}
+
 #myContacts h1
 {
     color: #fff;
-    font-size: 100px;
+    font-size: clamp(25px, 11.5dvw, 50px);
     font-family: Arial, sans-serif;
     
     opacity: 0;
+}
+
+#myContacts p
+{
+    font-size: 20px;
+    color: #11823b;
+    font-family: Arial, Helvetica, sans-serif;
+
+    text-align: center;
+
+    opacity: 0;
+}
+
+#myContacts a
+{
+    opacity: 0;
+}
+
+#eMailMeButton
+{
+    font-size: 14px;
+    font-family: "Roboto Mono", monospace;
+
+    margin-top: 20px;
+
+    background-color: #003318;
+    border: 1px solid #91f086;
+    border-radius: 5px;
+
+    color: #91f086;
+
+    cursor: pointer;
+
+    width: 150px;
+    height: 50px;
+
+    transition: 0.2s ease;
+}
+
+#eMailMeButton:hover
+{
+    box-shadow: 4px 4px #91f086;
+    transform: translate(-5px,-5px);
 }
 
 #footer
@@ -614,13 +668,15 @@ body
 
 #mainContainer.loaded #name p, 
 #mainContainer.loaded #name h1, 
+#mainContainer.loaded #name h2,
+#mainContainer.loaded #name h3,
+#mainContainer.loaded #name a,
 #mainContainer.loaded #aboutMe h1,
 #mainContainer.loaded #aboutMe p,
 #mainContainer.loaded #myWorks h1,
 #mainContainer.loaded #myContacts h1,
-#mainContainer.loaded #name h2,
-#mainContainer.loaded #name h3,
-#mainContainer.loaded #name a,
+#mainContainer.loaded #myContacts p,
+#mainContainer.loaded #myContacts a,
 #mainContainer.loaded #contactLeft li:nth-child(1),
 #mainContainer.loaded #contactLeft li:nth-child(2),
 #mainContainer.loaded #contactLeft li:nth-child(3),
@@ -665,7 +721,12 @@ body
     from
     {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(30px);
+    }
+    50%
+    {
+        opacity: 0.1;
+        transform: translateY(30px);
     }
     to
     {
@@ -679,7 +740,12 @@ body
     from
     {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-30px);
+    }
+    50%
+    {
+        opacity: 0.1;
+        transform: translateY(-30px);
     }
     to
     {
