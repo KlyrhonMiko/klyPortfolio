@@ -280,7 +280,7 @@ body
 #myContacts h1
 {
     color: #fff;
-    font-size: clamp(25px, 11dvw, 50px);
+    font-size: clamp(25px, 10dvw, 50px);
     font-family: Arial, sans-serif;
     
     opacity: 0;
