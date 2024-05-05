@@ -570,7 +570,7 @@ body
 {
     width: 300px;
 
-    overflow-x: visible;
+    overflow: visible;
 
     stroke: #91f086;
     stroke-width: 5px;
