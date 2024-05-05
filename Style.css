@@ -568,7 +568,8 @@ body
 
 #loadingScreen svg
 {
-    width: 200px;
+    width: 300px;
+    height: 300px;
 
     overflow: visible;
 
@@ -585,6 +586,7 @@ body
 #mainContainer.loaded #loadingScreen svg
 {
     width: 600px; 
+    height: 600px;
 
     stroke: #004d24;
     opacity: 0.5;
