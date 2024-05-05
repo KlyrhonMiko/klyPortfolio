@@ -568,7 +568,7 @@ body
 
 #loadingScreen svg
 {
-    width: 20%;
+    width: 30%;
 
     overflow-x: visible;
 
@@ -584,7 +584,7 @@ body
 
 #mainContainer.loaded #loadingScreen svg
 {
-    width: 50%; 
+    width: 60%; 
 
     stroke: #004d24;
     opacity: 0.5;
