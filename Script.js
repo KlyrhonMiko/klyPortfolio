@@ -3,7 +3,10 @@ const mainContainer = document.getElementById("mainContainer");
 // * HamBurger Menu Logic
 const hamburger = document.getElementById("hamburgerMenu"),
       navigation = document.getElementById("navigation"),
-      navigationLinks = document.getElementById("navigationLinks"),
+      homeLink = document.getElementById("homeLink"),
+      aboutLink = document.getElementById("aboutLink"),
+      worksLink = document.getElementById("worksLink"),
+      contactsLink = document.getElementById("contactsLink"),
       ham = document.getElementById("hamburger");
 let scrollActive = true;
 hamburger.addEventListener("click", () =>
@@ -19,11 +22,32 @@ hamburger.addEventListener("click", () =>
   }
 })
 
-navigationLinks.addEventListener("click", () =>
+homeLink.addEventListener("click", () =>
+{
+  onClick();
+})
+
+aboutLink.addEventListener("click", () =>
+{
+  onClick();
+})
+
+worksLink.addEventListener("click", () =>
+{
+  onClick();
+})
+
+contactsLink.addEventListener("click", () =>
+{
+  onClick();
+})
+
+function onClick()
 {
   navigation.classList.remove("active");
   ham.classList.remove("active");
-})
+  enableScroll();
+}
 
 let preventScroll = function (e) {
   e.preventDefault();

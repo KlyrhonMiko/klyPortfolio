@@ -568,6 +568,8 @@ body
 {
     visibility: hidden;
     z-index: 100;
+
+    opacity: 0;
 }
 
 .ham 
@@ -728,6 +730,7 @@ body
 }
 
 #mainContainer.loaded #logo, 
+#mainContainer.loaded #hamburgerMenu,
 #mainContainer.loaded #navigation li:nth-child(1), 
 #mainContainer.loaded #navigation li:nth-child(2), 
 #mainContainer.loaded #navigation li:nth-child(3), 
