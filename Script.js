@@ -57,12 +57,14 @@ function disableScroll()
 {
   scrollActive = false;
   window.addEventListener('wheel', preventScroll, { passive: false });
+  document.addEventListener('touchmove', preventScroll, { passive: false });
 }
 
 function enableScroll()
 {
   scrollActive = true;
   window.removeEventListener('wheel', preventScroll, { passive: false });
+  document.removeEventListener('touchmove', preventScroll, { passive: false });
 }
 
 // * Navigation Bar Logic
@@ -92,12 +94,12 @@ window.addEventListener('scroll', () =>
 })
 
 // * Loading Screen Logic
+disableScroll();
 window.addEventListener('load', () => 
 {
-  window.scrollTo(0,0)
   setTimeout(function()
   {
-    window.scrollTo(0,0)
+    enableScroll();
     mainContainer.classList.add("loaded")
   }, 3000)
 }) 
