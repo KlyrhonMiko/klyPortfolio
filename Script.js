@@ -1,5 +1,46 @@
 const mainContainer = document.getElementById("mainContainer");
 
+// * HamBurger Menu Logic
+const hamburger = document.getElementById("hamburgerMenu"),
+      navigation = document.getElementById("navigation"),
+      navigationLinks = document.getElementById("navigationLinks"),
+      ham = document.getElementById("hamburger");
+let scrollActive = true;
+hamburger.addEventListener("click", () =>
+{
+  navigation.classList.toggle("active");
+  if(scrollActive)
+  {
+    disableScroll();
+  }
+  else
+  {
+    enableScroll();
+  }
+})
+
+navigationLinks.addEventListener("click", () =>
+{
+  navigation.classList.remove("active");
+  ham.classList.remove("active");
+})
+
+let preventScroll = function (e) {
+  e.preventDefault();
+};
+
+function disableScroll() 
+{
+  scrollActive = false;
+  window.addEventListener('wheel', preventScroll, { passive: false });
+}
+
+function enableScroll()
+{
+  scrollActive = true;
+  window.removeEventListener('wheel', preventScroll, { passive: false });
+}
+
 // * Navigation Bar Logic
 const navigationBar = document.getElementById("navigationBar");
 let lastScroll = 0;

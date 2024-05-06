@@ -27,6 +27,14 @@ body
     overflow-x: hidden;
 }
 
+.highlight
+{
+    font-family: "Space Mono", monospace;
+    color: #91f086;
+
+    font-weight: 100;
+}
+
 /* * Main Container */
 #mainContainer
 {
@@ -555,12 +563,75 @@ body
     transform: translateY(-5px);
 }
 
-.highlight
+/* * Hamburger Menu */
+#hamburgerMenu
 {
-    font-family: "Space Mono", monospace;
-    color: #91f086;
+    visibility: hidden;
+    z-index: 100;
+}
 
-    font-weight: 100;
+.ham 
+{
+    cursor: pointer;
+    transition: transform 400ms;
+    user-select: none;
+
+    transform: translateY(2px);
+    
+    z-index: 100;
+}
+
+.hamRotate.active
+{
+    transform: rotate(45deg);
+}
+
+.hamRotate180.active 
+{
+    transform: rotate(180deg);
+}
+
+.line 
+{
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#91f086;
+    stroke-width: 2.5;
+    stroke-linecap:round; 
+}
+
+.ham .top 
+{
+    stroke-dasharray: 40 160;
+}
+  
+.ham .middle 
+{
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+}
+  
+.ham .bottom 
+{
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+}
+  
+.ham.active .top
+{
+    stroke-dashoffset: -64px;
+}
+  
+.ham.active .middle 
+{
+    transform: rotate(90deg);
+}
+
+.ham.active .bottom 
+{
+    stroke-dashoffset: -64px;
 }
 
 /* * Resume Button */
@@ -871,6 +942,45 @@ body
     #aboutMe
     {
         width: 80%;
+    }
+
+    #hamburgerMenu
+    {
+        visibility: visible;
+    }
+    
+    #navigation
+    {
+        padding: 0;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        transform: translateX(100vw);
+
+        height: 100vh;
+        width: clamp(300px, 25vw, 500px);
+
+        background-color: rgba(0, 51, 24,0.6);
+
+        box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+        
+        transition: 0.4s ease;
+    }
+
+    #navigation.active
+    {
+        transform: translateX(0);
+    }
+
+    #navigation ul
+    {
+        flex-direction: column;
+
+        margin-top: 25%;
+        
+        height: 50vh;
     }
 }
 
